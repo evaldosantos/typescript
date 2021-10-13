@@ -29,4 +29,12 @@ export class NegociacaoController {
       valor
     );
   }
+
+  limparFormulario(): void {
+    this.inputData.value = '';
+    this.inputQuantidade.value = '';
+    this.inputValor.value = '';
+
+    this.inputData.focus();
+  }
 }
