@@ -1,10 +1,6 @@
-export class MensagemView {
-  private el: HTMLElement;
+import { View } from "./view.js";
 
-  constructor(seletor: string) {
-    this.el = document.querySelector(seletor);
-  }
-
+export class MensagemView extends View {
   template(model: string): string {
     return `
       <p class="alert alert-info">${model}</p>
