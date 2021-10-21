@@ -18,7 +18,10 @@ export class NegociacaoController {
     this.inputValor = document.querySelector("#valor");
     this.negociacoesView.update(this.negociacoes);
   }
- 
+
+  /**
+   * this is a comment
+   */
   public adiciona(): void {
     const negociacao = Negociacao.criaDe(
       this.inputData.value,
