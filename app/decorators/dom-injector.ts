@@ -3,9 +3,13 @@ export function domInjector(seletor: string) {
     target: any,
     propertykey: string
   ) {
+    let el: HTMLElement;
     const getter = function() {
-      const el = document.querySelector(seletor);
+      if (!el) {
+        const el = document.querySelector(seletor);
       console.log('buscando elemento do dom com o seletor', seletor, 'para injetar em', propertykey);
+      }
+      
       return el;
     }
 
