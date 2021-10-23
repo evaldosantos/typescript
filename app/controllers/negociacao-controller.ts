@@ -74,6 +74,21 @@ export class NegociacaoController {
   }
 
   public importaDados(): void {
-    console.log('Importa dados')
+    fetch("http://localhost:8080/dados")
+      .then(resposta => resposta.json())
+      .then((dados: any) => {
+        return dados.map((dadoDeHoje: any) => {
+          return new Negociacao(
+            new Date,
+            dadoDeHoje.vezes, 
+            dadoDeHoje.montante
+            );
+        })
+      }).then(negociacoesDeHoje => {
+        for(let negociacao of negociacoesDeHoje) {
+          this.negociacoes.adiciona(negociacao);
+        }
+        this.negociacoesView.update(this.negociacoes);
+      });
   }
 }

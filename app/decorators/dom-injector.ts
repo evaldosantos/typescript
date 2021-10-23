@@ -6,8 +6,8 @@ export function domInjector(seletor: string) {
     let el: HTMLElement;
     const getter = function() {
       if (!el) {
-        const el = document.querySelector(seletor);
-      console.log('buscando elemento do dom com o seletor', seletor, 'para injetar em', propertykey);
+        el = document.querySelector(seletor) as HTMLElement;
+        console.log('buscando elemento do dom com o seletor', seletor, 'para injetar em', propertykey);
       }
       
       return el;
