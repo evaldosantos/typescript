@@ -27,4 +27,12 @@ export class Negociacao {
     );
   }
 
+  public paraTexto(): string {
+    return `
+      Data: ${this.data},
+      Quantidade: ${this.quantidade},
+      Valor: ${this.valor}
+    `
+  }
+
 }
