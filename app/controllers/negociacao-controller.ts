@@ -82,7 +82,7 @@ export class NegociacaoController {
         .then(negociacoesDeHoje => 
           negociacoesDeHoje
             .filter(negociacaoDeHoje => 
-              !this.negociacoes.lista().some(negociacao => negociacao.eIGual(negociacaoDeHoje))
+              !this.negociacoes.lista().some(negociacao => negociacao.eIgual(negociacaoDeHoje))
             )
         )
         .then(negociacoesDeHoje => {
